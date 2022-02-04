@@ -57,10 +57,6 @@ kmeans.fit(data)
 
 segmented_images = kmeans.cluster_centers_[kmeans.labels_].reshape(image.shape)
 
-label_maps = kmeans.labels_.reshape(image.shape[:2])
-
-color_centers = kmeans.cluster_centers_
-
 # Image given from the K-means method
 img_out = Image.fromarray(segmented_images.astype(np.uint8))
 
@@ -78,7 +74,7 @@ sketch.save("C:\\sketch.jpg")
 
 my_grid = transparent_white(sketch)
 
-# Results from K-clustering 
+# Results from K-clustering
 img_out.show()
 img_out.save("C:\\gridless.jpg")
 
